@@ -1,0 +1,38 @@
+use std::io::{self,BufRead};
+extern crate rand;
+
+enum Usermove {
+    Up,
+    Down,
+    Left,
+    Right,
+}
+
+fn print_game(field :& [[u32;4];4] ) {
+    println!("{:?}", &field[0] );
+    println!("{:?}", &field[1] );
+    println!("{:?}", &field[2] );
+    println!("{:?}", &field[3] );
+}
+
+fn get_usermove() -> Usermove {
+    let umove: Usermove;
+    loop {
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).unwrap();
+
+        match input.chars().nth(0) {
+            Some('a') =>{umove = Usermove::Left  ;break },
+            Some('w') =>{umove = Usermove::Up    ;break },
+            Some('s') =>{umove = Usermove::Down  ;break },
+            Some('d') =>{umove = Usermove::Right ;break },
+            _ => {println!("input was {}: invalid characte \n should be a, s, w, or d", input)}
+        }
+    }
+    umove
+}
+        
+
+fn main() {
+
+}
