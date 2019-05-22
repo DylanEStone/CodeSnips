@@ -1,0 +1,7 @@
+[package]
+name = "CHIP-8"
+version = "0.1.0"
+authors = ["stone"]
+edition = "2018"
+
+[dependencies]
